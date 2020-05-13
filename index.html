@@ -3,18 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Free Cell Game</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script>
 		document.addEventListener("DOMContentLoaded", function(event) { 
-		  decManager = deckManager();
-		  console.log(decManager.shuffle()); // 1
-
+		  deckController = deckController();
+		  var shuffleCards = deckController.shuffle();
+		  deckView = deckView();
+		  
+		  deckView.render(shuffleCards);
 		});
 	</script>
 </head>
 <body>
-	
+	<div clas="container deck">
+		<div id="column-0" class="column"></div>
+		<div id="column-1" class="column"></div>
+		<div id="column-2" class="column"></div>
+		<div id="column-3" class="column"></div>
+		<div id="column-4" class="column"></div>
+		<div id="column-5" class="column"></div>
+		<div id="column-6" class="column"></div>
+		<div id="column-7" class="column"></div>
+	</div>
 </body>
 
-<script src="./managers/dec-manager.js"></script>
+<script src="./controllers/dec-controller.js"></script>
+<script src="./views/dec-view.js"></script>
 
 </html>
